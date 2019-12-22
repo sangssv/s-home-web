@@ -1,0 +1,89 @@
+@import "../variables.scss";
+
+.slider-wrapper {
+  position: relative;
+
+  .buttons-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 50px;
+
+    button {
+      border-radius: 0;
+      background-color: rgba(0, 0, 0, 0.5) !important;
+      border: 0;
+      outline: none;
+      width: 45px !important;
+      height: 55px !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 100vh;
+  height: calc(100vh - #{$header-height}) !important;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .slider-image {
+    width: 100%;
+    height: calc(100vh - #{$header-height}) !important;
+    object-fit: cover;
+  }
+
+  .slider-content {
+    position: absolute;
+    z-index: 10;
+    bottom: 90px;
+    width: 100%;
+    text-align: left;
+    padding-left: 35%;
+
+    .title {
+      font-size: 44px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 2;
+      color: #ffffff;
+    }
+  }
+}
+
+.ant-carousel .slick-dots {
+  height: 12px !important;
+  bottom: 30px !important;
+
+  li {
+    margin: 0 5px !important;
+
+    button {
+      width: 12px !important;
+      height:12px !important;
+      border-radius: 50% !important;
+    }
+  }
+}

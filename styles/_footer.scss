@@ -1,0 +1,29 @@
+.footer {
+  background-color: #202020 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+
+  span {
+    display: inline-block;
+    width: 80px;
+  }
+
+  p {
+    line-height: 2;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .follow {
+    &__social {
+      &__icon {
+        font-size: 36px;
+      }
+    }
+  }
+}
