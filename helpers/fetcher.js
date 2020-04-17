@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const serialize = function(obj) {
   var str = [];
   for (var p in obj)

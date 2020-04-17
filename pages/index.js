@@ -17,11 +17,4 @@ class Index extends Component {
   }
 }
 
-// Index.getInitialProps = async () => {
-  // const res = await fetch('http://localhost:1337/company-infos');
-  // const json = await res.json();
-  // const companyInfo = json[0];
-  // return { companyInfo };
-// }
-
 export default Index;
