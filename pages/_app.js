@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout';
 import fetcher from '../helpers/fetcher'
 
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config() }
 
 NProgress.configure({
   minimum: 0.1,
