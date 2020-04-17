@@ -2,5 +2,14 @@
 
 .content {
   margin-top: $header-height;
-  min-height: calc(100vh - #{$header-height}) !important;
+  padding: 0 15px;
+  padding-bottom: 60px;
+  // min-height: calc(100vh - #{$header-height}) !important;
+}
+
+@media (min-width: 992px) {
+  .content {
+    padding: 0 50px;
+    padding-bottom: 60px;
+  }
 }

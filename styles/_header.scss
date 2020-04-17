@@ -1,31 +1,37 @@
 @import "./variables";
 
 .header {
-  height: $header-height;
+  height: $header-height !important;
   background: #fff !important;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   position: fixed;
   z-index: 99;
   width: 100%;
+  padding: 0 15px !important;
 
   .logo {
     float: left;
 
     img {
-      height: 60px;
-      position: relative;
-      top: -1px;
+      height: 54px;
     }
   }
 
-  .ant-menu {
+  .sub-menu {
+    display: none;
+  }
+
+  .navbar.ant-menu {
     flex: 1;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
     border-bottom: none;
 
-    .ant-menu-item {
+    .ant-menu-item,
+    .ant-menu-submenu {
       text-transform: uppercase;
       font-weight: 300;
       border-bottom: 0;
@@ -47,23 +53,167 @@
         transition-timing-function: ease-out;
       }
 
-      &:hover {
+      &.ant-menu-item-active,
+      &.ant-menu-submenu-active {
         color: unset;
         border-bottom: 0;
 
         &::before {
           width: 20px;
         }
+
+        .ant-menu-submenu-title {
+          color: unset;
+        }
       }
 
-      &.ant-menu-item-selected {
+      &.ant-menu-item-selected,
+      &.submenu-selected {
         font-weight: 700;
         color: #595959;
 
         &::before {
           width: 20px;
         }
+
+        a {
+          color: #595959 !important;
+        }
       }
+
+      a {
+        &:hover {
+          color: #595959 !important;
+        }
+      }
+    }
+
+    &.show {
+      display: flex;
+      position: absolute;
+      width: calc(100vw - 50px);
+      height: 100vh;
+      right: 0;
+      top: 0;
+      background: #000;
+      color: #fff;
+      flex-direction: column;
+      justify-content: flex-start;
+      pointer-events: visible;
+    }
+  }
+
+  .menu-toggle {
+    width: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    display: flex;
+
+    &__icon {
+      font-size: 30px !important;
+    }
+  }
+}
+
+.ant-drawer-content-wrapper {
+  .ant-drawer-wrapper-body {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ant-drawer-header {
+    height: 64px;
+    background-color: #000;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+
+    .ant-drawer-title {
+      color: #ffffff !important;
+      font-size: 30px;
+    }
+
+    .ant-drawer-close {
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      // left: 0 !important;
+
+      .anticon-close {
+        font-size: 30px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .ant-drawer-body {
+    position: absolute;
+    top: 64px;
+    height: calc(100% - 64px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 10px;
+
+    .ant-menu {
+      border-right: 0 !important;
+
+      .ant-menu-item,
+      .ant-menu-submenu,
+      .ant-menu-submenu .ant-menu-submenu-title {
+        font-size: 18px !important;
+        height: unset !important;
+        line-height: 48px !important;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-left: 0;
+
+        &.ant-menu-item-selected,
+        &.ant-menu-submenu-selected {
+          background-color: transparent !important;
+          color: #595959 !important;
+        }
+
+        a {
+          &:hover {
+            color: initial !important;
+          }
+        }
+
+        &.ant-menu-submenu-active {
+          .ant-menu-submenu-title {
+            color: #595959;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    padding: 0 50px !important;
+
+    .navbar.ant-menu {
+      display: flex;
+      border-right: 0 !important;
+
+      .ant-menu-item {
+        &.ant-menu-item-selected {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    .menu-toggle {
+      display: none;
     }
   }
 }

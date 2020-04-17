@@ -1,0 +1,50 @@
+.architecture-page {
+
+}
+
+.architecture-detail-page {
+  &__content {
+    margin-top: 20px;
+  }
+
+  .date-post {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    color: #84807d;
+
+    li {
+      border-right: 1px solid #ccc;
+      padding-right: 10px;
+      margin-right: 10px;
+      margin-left: 0;
+      list-style: inherit;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  .article-content {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .commitment {
+    border-top: 1px solid #ccc;
+    padding: 30px 0;
+    margin-top: 40px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    ol {
+      margin-left: 30px;
+    }
+  }
+}

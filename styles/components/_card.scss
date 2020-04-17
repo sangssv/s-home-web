@@ -1,0 +1,29 @@
+.card {
+  padding: 5px !important;
+  background: #f1f1f2 !important;
+  border: none !important;
+  border-radius: 0 !important;
+
+  .ant-card-body {
+    padding: 15px 10px;
+    height: 105px;
+  }
+}
+.card-meta {
+  .ant-card-meta-title {
+    white-space: normal !important;
+    text-transform: none;
+    color: #595959;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  .ant-card-meta-description {
+    font-size: 15px;
+    color: #888;
+    text-transform: none;
+    font-weight: 400;
+  }
+}

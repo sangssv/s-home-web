@@ -2,6 +2,8 @@
 
 .slider-wrapper {
   position: relative;
+  width: 100vw;
+  margin: 0 -15px;
 
   .buttons-container {
     position: absolute;
@@ -10,7 +12,8 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 0 50px;
+    // padding: 0 50px;
+    padding: 0 10px;
 
     button {
       border-radius: 0;
@@ -57,10 +60,13 @@
     bottom: 90px;
     width: 100%;
     text-align: left;
-    padding-left: 35%;
+    // padding-left: 35%;
+    padding: 0 10px;
+
 
     .title {
-      font-size: 44px;
+      // font-size: 44px;
+      font-size: 32px;
       color: #fff;
       margin-bottom: 10px;
     }
@@ -84,6 +90,27 @@
       width: 12px !important;
       height:12px !important;
       border-radius: 50% !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .slider-wrapper {
+    margin: 0 -50px;
+
+    .buttons-container {
+      padding: 0 50px;
+    }
+
+    .ant-carousel .slick-slide {
+      .slider-content {
+        padding: 0;
+        padding-left: 35%;
+
+        .title {
+          font-size: 44px;
+        }
+      }
     }
   }
 }
