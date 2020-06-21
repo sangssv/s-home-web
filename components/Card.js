@@ -6,7 +6,7 @@ import { getImageUrl } from '../utils/image-url';
 
 const { Meta } = Card;
 
-export default ({ title, image, linkTo }) => {
+export default ({ title, description, image, linkTo }) => {
   return (
     <Link href={linkTo}>
       <Card
@@ -25,7 +25,7 @@ export default ({ title, image, linkTo }) => {
         <Meta
           className="card-meta"
           title={title}
-          description="Orchard Garden"
+          description={description}
         />
       </Card>
     </Link>

@@ -1,5 +1,7 @@
 import fetch from 'node-fetch';
 
+const CRM_ENDPOINT = process.env.CRM_ENDPOINT || 'http://localhost:1337/';
+
 const serialize = function(obj) {
   var str = [];
   for (var p in obj)
@@ -14,6 +16,7 @@ const fetcher = {
     const ajax = () => {
       const sendRequest = () => {
         const options = {
+          headers: {},
           method,
           mode: 'cors',
         };
@@ -62,11 +65,19 @@ const fetcher = {
 
   get(url, { data } = {}) {
     return this._sendRequest(
-      process.env.CRM_ENDPOINT + url,
+      CRM_ENDPOINT + url,
       data,
       'GET',
     );
   },
+
+  post(url, {data } = {}) {
+    return this._sendRequest(
+      CRM_ENDPOINT + url,
+      data,
+      'POST',
+    );
+  }
 };
 
 export default fetcher;

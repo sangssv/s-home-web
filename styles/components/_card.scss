@@ -8,6 +8,12 @@
     padding: 15px 10px;
     height: 105px;
   }
+
+  .ant-card-cover {
+    image {
+      object-fit: cover;
+    }
+  }
 }
 .card-meta {
   .ant-card-meta-title {

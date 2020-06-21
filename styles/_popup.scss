@@ -1,0 +1,46 @@
+.popup {
+  width: 90% !important;
+  max-width: 800px !important;
+
+  .ant-modal-content {
+    border-radius: 0;
+    background-color: #fff;
+    padding: 5px;
+    position: relative;
+  }
+
+  .ant-modal-body {
+    background-color: #9d9d9d;
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .ant-modal-close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ant-modal-close-x {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    background-color: #000;
+
+    .ant-modal-close-icon {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+}

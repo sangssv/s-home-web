@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Carousel } from 'antd';
-import { Button, Radio, Icon } from 'antd';
+import { Button, Radio } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { getImageUrl } from '../utils/image-url';
 
 const sliders = [{
   id: 1,
@@ -20,25 +22,30 @@ const sliders = [{
 }]
 
 class Slider extends Component {
+  state = {
+    sliders: this.props.sliders,
+  }
+
   next = () => {
     this.carousel.next();
   }
   previous = () => {
     this.carousel.prev();
   }
+
   render() {
     return (
       <div className="slider-wrapper">
         <Carousel
           ref={node => (this.carousel = node)}
-          // autoplay
-          // infinite
-          speed={1000}
+          autoplay
+          infinite
+          speed={5000}
           effect="fade"
         >
-          {sliders.map(item => (
+          {this.state.sliders.map(item => (
             <div key={item.id}>
-              <img className="slider-image" src={item.image} />
+              <img className="slider-image" src={getImageUrl(item.image.url)} />
               <div className="slider-content">
                 <p className="title">{item.title}</p>
                 <p className="description">{item.description}</p>
@@ -47,8 +54,8 @@ class Slider extends Component {
           ))}
         </Carousel>
         <div className="buttons-container">
-          <Button onClick={this.previous} type="primary" icon="left" size="large" />
-          <Button onClick={this.next} type="primary" icon="right" size="large" />
+          <Button onClick={this.previous} type="primary" icon={<LeftOutlined />} size="large" />
+          <Button onClick={this.next} type="primary" icon={<RightOutlined />} size="large" />
         </div>
       </div>
     )

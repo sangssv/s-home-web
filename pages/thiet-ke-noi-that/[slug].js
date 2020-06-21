@@ -2,8 +2,11 @@ import React, { Component, Fragment } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import { Row, Col, Breadcrumb, Button } from 'antd';
-import Layout from '../../components/Layout';
-import { INTERIOR_DESIGN_SLUGS, INTERIOR_DESIGN_SLUG_LABEL } from '../../constants/route';
+import SEOMeta from '../../components/SEOMeta';
+import {
+  INTERIOR_DESIGN_SLUG_LABEL,
+  ROUTE,
+} from '../../constants/route';
 import Card from '../../components/Card';
 
 import fetcher from '../../helpers/fetcher';
@@ -38,10 +41,11 @@ class InteriorDesignSlug extends Component {
   };
 
   _loadData = async () => {
+    const { slug } = this.props.router.query;
     const newData = await fetcher.get('interior-designs', {
       data: {
         ...this.state.paging,
-        type: this.props.router.query.slug,
+        type: slug,
       }
     });
 
@@ -67,17 +71,22 @@ class InteriorDesignSlug extends Component {
   render() {
     const { slug } = this.props.router.query;
     return (
-      <Fragment>
+      <>
+        <SEOMeta
+          title={`Thiết kế nội thất - ${INTERIOR_DESIGN_SLUG_LABEL[slug]}`}
+          description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
+          url={`http://shomeinterior.com/thiet-ke-noi-that/${slug}`}
+        />
         <section>
           <Breadcrumb>
             <Breadcrumb.Item key="home">
               <Link href="/"><a>Trang chủ</a></Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item key="architecture">
-              <Link href="/interior-design/all"><a>Kiến trúc</a></Link>
+              <Link href={`${ROUTE.INTERIOR_DESIGN}/tat-ca`}><a>Kiến trúc</a></Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item key="slug">
-              <Link href={`/interior-design/${slug}`}><a>{INTERIOR_DESIGN_SLUG_LABEL[slug]}</a></Link>
+              {INTERIOR_DESIGN_SLUG_LABEL[slug]}
             </Breadcrumb.Item>
           </Breadcrumb>
         </section>
@@ -88,7 +97,7 @@ class InteriorDesignSlug extends Component {
                 <Card
                   image={item.avatar.url}
                   title={item.title}
-                  linkTo={`/interior-design-detail/${item.slug}`}
+                  linkTo={`/thiet-ke-noi-that/chi-tiet/${item.slug}`}
                 />
               </Col>
             ))}
@@ -99,7 +108,7 @@ class InteriorDesignSlug extends Component {
             <Button loading={this.state.isLoading} onClick={this.loadMore}>Xem thêm</Button>
           </section>
         }
-      </Fragment>
+      </>
     );
   }
 }

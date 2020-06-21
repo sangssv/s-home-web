@@ -1,0 +1,18 @@
+version: '2'
+services:
+  test:
+    image: crissang/test:latest
+    environment:
+      CRM_ENDPOINT: http://crm:10001/
+    stdin_open: true
+    tty: true
+    links:
+    - crm:crm
+    ports:
+    - 10000:3000/tcp
+  crm:
+    image: crissang/shome-crm:latest
+    stdin_open: true
+    tty: true
+    ports:
+    - 10001:1337/tcp

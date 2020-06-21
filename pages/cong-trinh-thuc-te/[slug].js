@@ -4,15 +4,15 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import dateFormat from 'dateformat';
 import { Row, Col, Button, Breadcrumb } from 'antd';
-import Layout from '../../../components/Layout';
-import { INTERIOR_DESIGN_SLUGS } from '../../../constants/route';
-import fetcher from '../../../helpers/fetcher';
+import Layout from '../../components/Layout';
+import { ROUTE } from '../../constants/route';
+import fetcher from '../../helpers/fetcher';
 
-class InteriorDesignDetailSlug extends Component {
+class CompletedProjectSlug extends Component {
   static getInitialProps(ctx) {
     const { slug } = ctx.query;
 
-    return fetcher.get(`interior-designs/${slug}`)
+    return fetcher.get(`completed-projects/${slug}`)
       .then(response => {
         console.log('response', response);
         return { data: response };
@@ -29,7 +29,7 @@ class InteriorDesignDetailSlug extends Component {
               <Link href="/">Trang chủ</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item key="architecture">
-              <Link href="/interior-design/all">Thiết kế nội thất</Link>
+              <Link href={ROUTE.COMPLETED_PROJECT}>Công trình thực tế</Link>
             </Breadcrumb.Item>
           </Breadcrumb>
         </section>
@@ -59,4 +59,4 @@ class InteriorDesignDetailSlug extends Component {
   }
 }
 
-export default withRouter(InteriorDesignDetailSlug);
+export default withRouter(CompletedProjectSlug);

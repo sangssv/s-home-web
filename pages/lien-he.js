@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
-import { Row, Col, Form, Icon, Input, Button } from 'antd';
+import { Row, Col, Form, Input, Button } from 'antd';
+import ContactForm from '../components/ContactForm';
+import SEOMeta from '../components/SEOMeta';
 
 class Contact extends Component {
   render() {
-    console.log('Contact', this.props)
     const { companyInfo = {} } = this.props;
     const { name, office_address, link_google_map, phone, email } = companyInfo;
 
     return (
-      <div>
+      <>
+        <SEOMeta
+          title="Liên hệ"
+          description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
+          url="http://shomeinterior.com/lien-he"
+        />
         <div className="contact_page">
           <div className="contact_page__company_info">
             <p className="contact_page__company_info__name">{name}</p>
@@ -38,7 +44,8 @@ class Contact extends Component {
             </Col>
             <Col xs={24} md={12} className="contact_page__form">
               <h3 className="contact_page__title">Đừng ngần ngại liên lạc với chúng tôi nếu bạn có những yêu cầu riêng</h3>
-              <Form>
+              <ContactForm  />
+              {/* <Form>
                 <Form.Item>
                   <Input
                     type="text"
@@ -70,11 +77,11 @@ class Contact extends Component {
                     Gửi tin nhắn
                   </Button>
                 </Form.Item>
-              </Form>
+              </Form> */}
             </Col>
           </Row>
         </div>
-      </div>
+      </>
     );
   }
 }

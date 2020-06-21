@@ -7,6 +7,8 @@ const handle = app.getRequestHandler()
 
 const PORT = process.env.PORT || 3000;
 
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+
 app.prepare()
 .then(() => {
   const server = express()

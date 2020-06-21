@@ -3,14 +3,15 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { Breadcrumb, Row, Col, Button, Spin, Alert } from 'antd';
 import Layout from '../../components/Layout';
+import SEOMeta from '../../components/SEOMeta';
 import Card from '../../components/Card';
-import { INTERIOR_DESIGN_SLUGS } from '../../constants/route';
+import { INTERIOR_DESIGN_SLUGS, ROUTE } from '../../constants/route';
 import fetcher from '../../helpers/fetcher';
 
 class Architecture extends Component {
   state = {
     architectures: this.props.architectures || [],
-    paging: this.props.paging ||  { page: 1, page_size: 3 },
+    paging: this.props.paging ||  { page: 1, page_size: 6 },
     isLoading: false,
   };
 
@@ -38,14 +39,20 @@ class Architecture extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
+        <SEOMeta
+          key="seo"
+          title="Kiến trúc"
+          description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
+          url="http://shomeinterior.com/kien-truc"
+        />
         <section>
           <Breadcrumb>
             <Breadcrumb.Item key="home">
               <Link href="/"><a>Trang chủ</a></Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item key="architecture">
-              <Link href="/architecture"><a>Kiến trúc</a></Link>
+              <Link href={ROUTE.ARCHITECTURE}><a>Kiến trúc</a></Link>
             </Breadcrumb.Item>
           </Breadcrumb>
         </section>
@@ -56,7 +63,7 @@ class Architecture extends Component {
                 <Card
                   image={item.avatar.url}
                   title={item.title}
-                  linkTo={`/architecture/${item.slug}`}
+                  linkTo={`${ROUTE.ARCHITECTURE}/${item.slug}`}
                 />
               </Col>
             ))}
@@ -67,7 +74,7 @@ class Architecture extends Component {
             <Button loading={this.state.isLoading} onClick={this.loadMore}>Xem thêm</Button>
           </section>
         }
-      </Fragment>
+      </>
     );
   }
 }
@@ -75,7 +82,7 @@ class Architecture extends Component {
 Architecture.getInitialProps = () => {
   const paging = {
     page: 1,
-    per_page: 3,
+    per_page: 6,
   };
 
   return Promise.all([

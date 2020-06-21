@@ -44,7 +44,7 @@
         position: absolute;
         width: 0;
         height: 2px;
-        background-color: #FFD700;
+        background-color: #895050;
         bottom: 7px;
         left: 50%;
         transform: translateX(-50%);
@@ -112,6 +112,7 @@
     outline: none;
     position: relative;
     display: flex;
+    align-items: center;
 
     &__icon {
       font-size: 30px !important;

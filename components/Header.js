@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
-import { Layout, Menu, Button, Icon, Drawer } from 'antd';
+import { Layout, Menu, Button, Drawer } from 'antd';
 import { routes } from '../constants/route';
 import fetcher from '../helpers/fetcher';
 import { getImageUrl } from '../utils/image-url';
-
+import {
+  CaretDownOutlined,
+  MenuOutlined,
+} from '@ant-design/icons';
 const { SubMenu } = Menu;
 
 class Header extends Component {
@@ -62,7 +65,8 @@ class Header extends Component {
           width={300}
         >
           <Menu
-            selectedKeys={[`/${path}`]}
+            selectedKeys={[router.asPath]}
+            defaultOpenKeys={path === 'thiet-ke-noi-that' ? [`/${path}`] : []}
             className="navbar"
             mode="inline"
             onSelect={() => this.hideDrawer()}
@@ -96,7 +100,7 @@ class Header extends Component {
           </Menu>
         </Drawer>
         <div className="logo">
-          <a href="#">
+          <a href="/">
             <img src={companyInfo.logo ? getImageUrl(companyInfo.logo.url) : "/images/logo.png"} />
           </a>
         </div>
@@ -109,8 +113,7 @@ class Header extends Component {
                   title={
                     <span style={{ position: 'relative', paddingRight: 10 }}>
                       {route.title}
-                      <Icon
-                        type="caret-down"
+                      <CaretDownOutlined
                         style={{
                           fontSize: 12,
                           position: 'absolute',
@@ -144,7 +147,7 @@ class Header extends Component {
           })}
         </Menu>
         <button className="menu-toggle" onClick={this.showDrawer}>
-          <Icon className="menu-toggle__icon" type="menu" />
+          <MenuOutlined className="menu-toggle__icon" />
         </button>
       </Layout.Header>
     )

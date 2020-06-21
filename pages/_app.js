@@ -23,8 +23,15 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default class MyApp extends App {
   static getInitialProps = async (appContext) => {
     const appProps = await App.getInitialProps(appContext);
-    const response = await fetcher.get('company-infos');
-    return { ...appProps, companyInfo: response[0] };
+    const companyInfos = await fetcher.get('company-infos');
+    const popups = await fetcher.get('popups');
+    const sliders = await fetcher.get('sliders');
+    return {
+      ...appProps,
+      companyInfo: companyInfos[0],
+      popup: popups[0],
+      sliders: sliders,
+    };
   }
 
   render() {
