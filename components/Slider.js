@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel } from 'antd';
 import { Button, Radio } from 'antd';
+import Link from 'next/link';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { getImageUrl } from '../utils/image-url';
 
@@ -34,22 +35,26 @@ class Slider extends Component {
   }
 
   render() {
+    if (!this.state.sliders || !this.state.sliders.length) return null;
     return (
       <div className="slider-wrapper">
         <Carousel
           ref={node => (this.carousel = node)}
           autoplay
+          autoplaySpeed={6000}
           infinite
-          speed={5000}
+          speed={1000}
           effect="fade"
         >
           {this.state.sliders.map(item => (
             <div key={item.id}>
               <img className="slider-image" src={getImageUrl(item.image.url)} />
-              <div className="slider-content">
-                <p className="title">{item.title}</p>
-                <p className="description">{item.description}</p>
-              </div>
+              <Link href={item.link || ''}>
+                <div className="slider-content">
+                  <p className="title">{item.title}</p>
+                  <p className="description">{item.description}</p>
+                </div>
+              </Link>
             </div>
           ))}
         </Carousel>

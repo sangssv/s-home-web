@@ -6,6 +6,7 @@ import dateFormat from 'dateformat';
 import { Row, Col, Button, Breadcrumb } from 'antd';
 import Layout from '../../../components/Layout';
 import SEOMeta from '../../../components/SEOMeta';
+import AdviseButton from '../../../components/AdviseButton';
 import { INTERIOR_DESIGN_SLUGS } from '../../../constants/route';
 import fetcher from '../../../helpers/fetcher';
 
@@ -26,7 +27,7 @@ class InteriorDesignDetail extends Component {
         <SEOMeta
           title={data.title}
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url={`http://shomeinterior.com/thiet-ke-noi-that/chi-tiet/${data.slug}`}
+          url={`thiet-ke-noi-that/chi-tiet/${data.slug}`}
         />
         <div className="architecture-detail-page">
           <section>
@@ -56,9 +57,7 @@ class InteriorDesignDetail extends Component {
               <li>Bảo hành tất cả các sản phẩm 2 năm, bảo hành chất lượng gỗ trọn vòng đời sử dụng.</li>
               <li>Cam kết mức giá tốt nhất với nhiều ưu đãi bất ngờ trong năm 2020.</li>
             </ol>
-            <div className="center">
-              <Button>Tư vấn</Button>
-            </div>
+            <AdviseButton />
           </section>
         </div>
       </>

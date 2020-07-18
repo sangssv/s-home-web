@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import dateFormat from 'dateformat';
 import { Row, Col, Button, Breadcrumb } from 'antd';
 import SEOMeta from '../../components/SEOMeta';
+import AdviseButton from '../../components/AdviseButton';
 import { ROUTE } from '../../constants/route';
 import fetcher from '../../helpers/fetcher';
 
@@ -14,7 +15,6 @@ class ArchitectureSlug extends Component {
 
     return fetcher.get(`architectures/${slug}`)
       .then(response => {
-        console.log('response', response);
         return { data: response };
       });
   }
@@ -26,7 +26,7 @@ class ArchitectureSlug extends Component {
         <SEOMeta
           title={data.title}
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url={`http://shomeinterior.com/kien-truc/${data.slug}`}
+          url={`kien-truc/${data.slug}`}
         />
         <div className="architecture-detail-page">
           <section>
@@ -56,9 +56,7 @@ class ArchitectureSlug extends Component {
               <li>Bảo hành tất cả các sản phẩm 2 năm, bảo hành chất lượng gỗ trọn vòng đời sử dụng.</li>
               <li>Cam kết mức giá tốt nhất với nhiều ưu đãi bất ngờ trong năm 2020.</li>
             </ol>
-            <div className="center">
-              <Button>Tư vấn</Button>
-            </div>
+            <AdviseButton />
           </section>
         </div>
       </>

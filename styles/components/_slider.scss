@@ -62,17 +62,18 @@
     text-align: left;
     // padding-left: 35%;
     padding: 0 10px;
-
+    cursor: pointer;
 
     .title {
       // font-size: 44px;
-      font-size: 32px;
+      font-size: 36px;
+      font-weight: 400;
       color: #fff;
       margin-bottom: 10px;
     }
 
     .description {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 2;
       color: #ffffff;
     }

@@ -35,7 +35,7 @@ const AppLayout = (props) => {
         <Footer {...props} />
         <Copyright />
         <Popup {...props} />
-        <Hotline />
+        <Hotline {...props} />
         <div
           className="fb-customerchat"
           attribution="setup_tool"

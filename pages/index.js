@@ -13,7 +13,7 @@ const Index = (props) => {
       <SEOMeta
         title="Trang chủ"
         description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-        url="http://shomeinterior.com/"
+        url=""
       />
       <Slider {...props} />
       <Contact {...props} />

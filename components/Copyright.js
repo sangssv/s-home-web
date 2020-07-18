@@ -7,7 +7,7 @@ import { Layout } from 'antd';
 const Copyright = () => {
   return (
     <div className="copyright">
-      &copy; S-Home Interior 2019
+      &copy; S-Home Interior 2020
       {" - "}
       <a target="_blank" href="https://www.facebook.com/pxsang194">Designed by Cris Sang</a>
     </div>

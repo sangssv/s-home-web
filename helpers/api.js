@@ -5,7 +5,6 @@ const api = {
     return axios.get(url)
     .then(function (response) {
       // handle success
-      console.log(response);
       return response;
     })
     .catch(function (error) {

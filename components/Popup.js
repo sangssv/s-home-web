@@ -13,11 +13,13 @@ const Popup = (props) => {
   // if (!isOpen) return null;
 
   useEffect(() => {
-    const closedPopup = sessionStorage.getItem('__popup');
-    if (parseInt(closedPopup) !== popup.id) {
-      setOpen(true);
-    } else {
-      setOpen(false);
+    if (popup) {
+      const closedPopup = sessionStorage.getItem('__popup');
+      if (parseInt(closedPopup) !== popup.id) {
+        setOpen(true);
+      } else {
+        setOpen(false);
+      }
     }
   }, []);
 
@@ -25,6 +27,8 @@ const Popup = (props) => {
     sessionStorage.setItem('__popup', popup.id);
     setOpen(false);
   }
+
+  if (!popup) return null;
 
   return (
     <Modal

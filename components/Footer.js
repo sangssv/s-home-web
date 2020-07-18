@@ -42,15 +42,15 @@ class Footer extends Component {
           <Col xs={24} md={8} className="follow">
             <h2 className="main-title text-white">Follow us</h2>
             <div className="follow__social">
-              <a href="https://www.facebook.com/noithatgold">
+              <a className="facebook" href="https://www.facebook.com/ShomeInterior/">
                 <FacebookFilled className="follow__social__icon" />
               </a>
-              <a href="https://www.facebook.com/noithatgold">
+              {/* <a className="youtube" href="https://www.facebook.com/noithatgold">
                 <YoutubeFilled className="follow__social__icon" />
               </a>
-              <a href="https://www.facebook.com/noithatgold">
+              <a className="instagram" href="https://www.facebook.com/noithatgold">
                 <InstagramFilled className="follow__social__icon" />
-              </a>
+              </a> */}
             </div>
           </Col>
         </Row>

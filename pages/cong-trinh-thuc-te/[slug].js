@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import dateFormat from 'dateformat';
 import { Row, Col, Button, Breadcrumb } from 'antd';
-import Layout from '../../components/Layout';
+import AdviseButton from '../../components/AdviseButton';
 import { ROUTE } from '../../constants/route';
 import fetcher from '../../helpers/fetcher';
 
@@ -14,7 +14,6 @@ class CompletedProjectSlug extends Component {
 
     return fetcher.get(`completed-projects/${slug}`)
       .then(response => {
-        console.log('response', response);
         return { data: response };
       });
   }
@@ -50,9 +49,7 @@ class CompletedProjectSlug extends Component {
             <li>Bảo hành tất cả các sản phẩm 2 năm, bảo hành chất lượng gỗ trọn vòng đời sử dụng.</li>
             <li>Cam kết mức giá tốt nhất với nhiều ưu đãi bất ngờ trong năm 2020.</li>
           </ol>
-          <div className="center">
-            <Button>Tư vấn</Button>
-          </div>
+          <AdviseButton />
         </section>
       </div>
     );

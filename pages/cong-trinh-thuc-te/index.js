@@ -42,7 +42,7 @@ class Projects extends Component {
         <SEOMeta
           title="Công trình thực tế"
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url="http://shomeinterior.com/cong-trinh-thuc-te"
+          url="cong-trinh-thuc-te"
         />
         <section>
           <Breadcrumb>

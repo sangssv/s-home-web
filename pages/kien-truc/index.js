@@ -44,7 +44,7 @@ class Architecture extends Component {
           key="seo"
           title="Kiến trúc"
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url="http://shomeinterior.com/kien-truc"
+          url="kien-truc"
         />
         <section>
           <Breadcrumb>
@@ -63,6 +63,7 @@ class Architecture extends Component {
                 <Card
                   image={item.avatar.url}
                   title={item.title}
+                  description={item.project}
                   linkTo={`${ROUTE.ARCHITECTURE}/${item.slug}`}
                 />
               </Col>

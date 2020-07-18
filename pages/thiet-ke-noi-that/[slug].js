@@ -75,7 +75,7 @@ class InteriorDesignSlug extends Component {
         <SEOMeta
           title={`Thiết kế nội thất - ${INTERIOR_DESIGN_SLUG_LABEL[slug]}`}
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url={`http://shomeinterior.com/thiet-ke-noi-that/${slug}`}
+          url={`thiet-ke-noi-that/${slug}`}
         />
         <section>
           <Breadcrumb>

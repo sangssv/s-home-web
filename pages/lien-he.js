@@ -5,6 +5,10 @@ import ContactForm from '../components/ContactForm';
 import SEOMeta from '../components/SEOMeta';
 
 class Contact extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { companyInfo = {} } = this.props;
     const { name, office_address, link_google_map, phone, email } = companyInfo;
@@ -14,7 +18,7 @@ class Contact extends Component {
         <SEOMeta
           title="Liên hệ"
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
-          url="http://shomeinterior.com/lien-he"
+          url="lien-he"
         />
         <div className="contact_page">
           <div className="contact_page__company_info">
