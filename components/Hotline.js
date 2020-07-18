@@ -6,9 +6,9 @@ import { Layout } from 'antd';
 
 const phoneFormat = phone => {
   var cleaned = ('' + phone).replace(/\D/g, '')
-  var match = cleaned.match(/^(\d{4})(\d{3})(\d{3})((\d))$/)
+  var match = cleaned.match(/^(\d{4})(\d{3})(\d{3})((\d?))$/)
   if (match) {
-    return match[1] + ' ' + match[2] + ' ' + match[3] + ' ' + match[4];
+    return match[1] + ' ' + match[2] + ' ' + match[3] + (match[4] ? (' ' + match[4]) : '');
   }
   return null
 }
