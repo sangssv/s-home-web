@@ -19,7 +19,7 @@ const Hotline = (props) => {
   if (!hotline) return null;
 
   return (
-    <a href={`tel:+${hotline}`} className="hotline">
+    <a href={`tel:${hotline}`} className="hotline">
       <div className="hotline__icon-container">
         <img className="hotline__icon" src="/images/hotline-icon.png" />
       </div>

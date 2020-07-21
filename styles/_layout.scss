@@ -3,6 +3,14 @@
   overflow: hidden;
 }
 
+.fb-customerchat {
+  span {
+    iframe {
+      max-height: 0 !important;
+    }
+  }
+}
+
 .content {
 
 }
