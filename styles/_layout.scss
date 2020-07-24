@@ -3,18 +3,16 @@
   overflow: hidden;
 }
 
-.fb-customerchat {
-  span {
-    iframe {
-      max-height: 0 !important;
-    }
-  }
-}
-
 .content {
 
 }
 
 @media (min-width: 992px) {
-
+  .fb-customerchat {
+    span {
+      iframe {
+        max-height: 0 !important;
+      }
+    }
+  }
 }

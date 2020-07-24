@@ -6,9 +6,17 @@
   font-size: 16px !important;
   padding: 30px 10px !important;
 
+  &__info {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
   &__label {
-    display: inline-block;
     width: 130px;
+  }
+
+  &__value {
+      width: calc(100% - 130px);
   }
 
   p {

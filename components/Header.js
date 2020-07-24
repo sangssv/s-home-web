@@ -15,7 +15,10 @@ class Header extends Component {
   state = {
     visible: false,
     isShowBoxShadow: false,
+    // isShowHeader: true,
   }
+
+  // lastScrollTop = 0;
 
   componentDidMount() {
     window.addEventListener('scroll', this.listenToScroll)
@@ -26,14 +29,24 @@ class Header extends Component {
   }
 
   listenToScroll = () => {
-    const windowScroll =
-    document.body.scrollTop || document.documentElement.scrollTop
-
-    if (windowScroll >= 70) {
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    if (scrollTop >= 70) {
       this.setState({ isShowBoxShadow: true });
     } else {
       this.setState({ isShowBoxShadow: false });
     }
+
+    // if (scrollTop > this.lastScrollTop) {
+    //   this.setState({
+    //     isShowHeader: false,
+    //   });
+    // } else {
+    //   this.setState({
+    //     isShowHeader: true,
+    //   });
+    // }
+
+    // this.lastScrollTop = scrollTop;
   }
 
   showDrawer = () => {

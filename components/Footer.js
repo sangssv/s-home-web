@@ -22,22 +22,22 @@ class Footer extends Component {
         <Row>
           <Col xs={24} md={16} className="info">
             <h2 className="main-title text-white">{name}</h2>
-            <p>
-              <span className="footer__label">Địa chỉ VP:</span>
-              <span style={{ width: 'auto' }}>{office_address}</span>
-            </p>
-            <p>
-              <span className="footer__label">Xưởng sản xuất:</span>
-              <span style={{ width: 'auto' }}>{factory_address}</span>
-            </p>
-            <p>
-              <span className="footer__label">Tel:</span>
+            <div className="footer__info">
+              <div className="footer__label">Địa chỉ VP:</div>
+              <div className="footer__value">{office_address}</div>
+            </div>
+            <div className="footer__info">
+              <div className="footer__label">Xưởng sản xuất:</div>
+              <div className="footer__value">{factory_address}</div>
+            </div>
+            <div className="footer__info">
+              <div className="footer__label">Tel:</div>
               <a href={`tel:${phone}`}>{phone}</a>
-            </p>
-            <p>
-              <span className="footer__label">Email:</span>
+            </div>
+            <div className="footer__info">
+              <div className="footer__label">Email:</div>
               <a href={`mailto:${email}`}>{email}</a>
-            </p>
+            </div>
           </Col>
           <Col xs={24} md={8} className="follow">
             <h2 className="main-title text-white">Follow us</h2>
