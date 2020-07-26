@@ -10,7 +10,7 @@ import fetcher from '../../helpers/fetcher';
 class Projects extends Component {
   state = {
     completedProjects: this.props.completedProjects || [],
-    paging: this.props.paging ||  { page: 1, page_size: 3 },
+    paging: this.props.paging ||  { page: 1, per_page: 6 },
     isLoading: false,
   };
 
@@ -81,7 +81,7 @@ class Projects extends Component {
 Projects.getInitialProps = () => {
   const paging = {
     page: 1,
-    per_page: 3,
+    per_page: 6,
   };
 
   return Promise.all([

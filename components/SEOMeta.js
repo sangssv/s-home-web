@@ -1,9 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
+import { getImageUrl } from '../utils/image-url';
 
 const SEOMeta = (props) => {
+  console.log('SEOMeta', props)
   const HOSTNAME = process.env.HOSTNAME || 'http://shomeinterior.com/';
-  const fullURL = `${HOSTNAME}url`
+  const fullURL = props.url ? `${HOSTNAME}${props.url}` : HOSTNAME;
+
+  const image = props.imageUrl ? getImageUrl(props.imageUrl) : `${HOSTNAME}images/logo.png`;
 
   return (
     <Head>
@@ -13,14 +17,14 @@ const SEOMeta = (props) => {
       <meta name="og:title" property="og:title" content={`${props.title} | S Home Interior`} />
       <meta name="og:description" property="og:description" content={props.description} />
       <meta property="og:site_name" content="S Home Interior" />
-      {fullURL && <meta property="og:url" content={`${fullURL}`} />}
-      <meta property="og:image" content={`${HOSTNAME}images/logo.png`} />
+      <meta property="og:url" content={`${fullURL}`} />
+      <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={`${props.title} | S Home Interior`} />
       <meta name="twitter:description" content={props.desc} />
       <meta name="twitter:site" content="@SHomeInterior" />
       <meta name="twitter:creator" content="S Home Admin" />
-      <meta name="twitter:image" content={`${HOSTNAME}images/logo.png`} />
+      <meta name="twitter:image" content={image} />
       <link rel="icon" type="image/png" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/favicon.ico" />
     </Head>

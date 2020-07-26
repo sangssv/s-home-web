@@ -28,6 +28,7 @@ class InteriorDesignDetail extends Component {
           title={data.title}
           description="Chuyên tư vấn thiết kế và thi công nội thất căn hộ, nhà phố, biệt thự."
           url={`thiet-ke-noi-that/chi-tiet/${data.slug}`}
+          imageUrl={data.avatar.url}
         />
         <div className="architecture-detail-page">
           <section>

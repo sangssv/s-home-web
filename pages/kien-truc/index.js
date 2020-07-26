@@ -11,7 +11,7 @@ import fetcher from '../../helpers/fetcher';
 class Architecture extends Component {
   state = {
     architectures: this.props.architectures || [],
-    paging: this.props.paging ||  { page: 1, page_size: 6 },
+    paging: this.props.paging ||  { page: 1, per_page: 6 },
     isLoading: false,
   };
 

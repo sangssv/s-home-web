@@ -36,7 +36,7 @@ class InteriorDesignSlug extends Component {
 
   state = {
     data: this.props.data || [],
-    paging: this.props.paging ||  { page: 1, page_size: 6 },
+    paging: this.props.paging ||  { page: 1, per_page: 6 },
     isLoading: false,
   };
 
