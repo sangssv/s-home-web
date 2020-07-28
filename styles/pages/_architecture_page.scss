@@ -30,6 +30,7 @@
   .article-content {
     img {
       max-width: 100%;
+      object-fit: contain;
     }
 
     ul {
@@ -42,10 +43,22 @@
     }
   }
 
-  .commitment {
+  .video {
+    display: flex;
+    justify-content: center;
+
+    iframe {
+      width: 100%;
+      height: calc(100vw * 0.5625);
+    }
+  }
+
+  .commitment,
+  .video {
     border-top: 1px solid #ccc;
     padding: 30px 0;
     margin-top: 40px;
+    padding-bottom: 0;
 
     .title {
       font-size: 20px;
@@ -56,6 +69,17 @@
     ol {
       margin-left: 30px;
       margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .architecture-detail-page {
+    .video {
+      iframe {
+        max-width: 854px;
+        height: 480px;
+      }
     }
   }
 }

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { getImageUrl } from '../utils/image-url';
 
 const SEOMeta = (props) => {
-  console.log('SEOMeta', props)
   const HOSTNAME = process.env.HOSTNAME || 'http://shomeinterior.com/';
   const fullURL = props.url ? `${HOSTNAME}${props.url}` : HOSTNAME;
 

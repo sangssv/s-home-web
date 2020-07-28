@@ -21,6 +21,7 @@ class ArchitectureSlug extends Component {
 
   render() {
     const { data } = this.props;
+
     return (
       <>
         <SEOMeta
@@ -49,6 +50,11 @@ class ArchitectureSlug extends Component {
             </ul>
             <ReactMarkdown className="article-content" source={data.content} />
           </main>
+          {data.video_url ? (
+            <section className="video">
+              <iframe src={data.video_url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+          ) : null}
           <section className="commitment">
             <h5 className="title">Chúng tôi cam kết</h5>
             <ol>
